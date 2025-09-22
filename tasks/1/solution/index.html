@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ładowanie skryptów</title>
+  <link rel="prefetch" href="./charts.js" as="script">
+</head>
+<body>
+  <button id="load-chart">Załaduj wykres</button>
+
+  <script>
+    document.getElementById('load-chart').addEventListener('click', function() {
+      import('./charts.js').then(module => {
+        module.renderChart();
+      });
+    })
+  </script>
+  <script src="analytics.js" async></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
