@@ -14,6 +14,8 @@ function request(baseUrl, path, options) {
 request("https://jsonplaceholder.typicode.com", "posts", { method: "GET" });
 request("https://jsonplaceholder.typicode.com", "users", { method: "GET" });
 
+const api = () => {}
+
 api("posts", { method: "GET" }); // https://jsonplaceholder.typicode.com/posts
 api("users", { method: "GET" }); // https://jsonplaceholder.typicode.com/users
 
