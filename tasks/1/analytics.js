@@ -1,0 +1,1 @@
+console.log("Analytics załadowany i uruchomiony");

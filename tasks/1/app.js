@@ -1,0 +1,1 @@
+console.log("App.js załadowany i uruchomiony");
