@@ -3,14 +3,14 @@ function processData() {
 
   console.log(count); // 1. powinno być undefined
 
-  const count = 0;
+  var count = 0;
   let total = 10;
   const factor = 2;
 
   if (total > 5) {
     let total = "20";
-    count += total; 
-    console.log("Inside if:", total);
+    count += total;
+    console.log("Inside if:", totalLocal);
   }
 
   console.log("Count:", count); // 2. powinno być 20
