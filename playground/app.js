@@ -67,12 +67,36 @@
 
 // 'b' + 'a' + +'b' // 'baNaN'
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const color = 'blue';
+// const color = 'blue';
 
-const Title = styled.div`
-    font-size: 50px;
-    color: ${color};
-    text-align: center;
-`;
+// const Title = styled.div`
+//     font-size: 50px;
+//     color: ${color};
+//     text-align: center;
+// `;
+
+function OldWayDog(name) {
+    this.name = name;
+}
+
+OldWayDog.prototype.sayHello = function() {
+    return `Cześć, jestem ${this.name}`;
+}
+
+const oldWayDog = new OldWayDog('Reksio');
+oldWayDog.name; // Reksio
+oldWayDog.sayHello(); // Cześć, jestem Reksio
+
+class Dog {
+    constructor(name) {
+        this.name = name;
+    }
+    sayHello() {
+        return `Cześć, jestem ${this.name}`;
+    }
+}
+const dog = new Dog('Azor');
+dog.name; // Azor
+dog.sayHello(); // Cześć, jest Azor
