@@ -59,10 +59,20 @@
 // console.log(childAccount); // [{ amount: 100, description: "Birthday gift" }]
 
 
-'a' + 1 // 'a1
+// 'a' + 1 // 'a1
 
-1 + 2 // 3
+// 1 + 2 // 3
 
-+'1' + 2 // 3
+// +'1' + 2 // 3
 
-'b' + 'a' + +'b' // 'baNaN'
+// 'b' + 'a' + +'b' // 'baNaN'
+
+import styled from 'styled-components';
+
+const color = 'blue';
+
+const Title = styled.div`
+    font-size: 50px;
+    color: ${color};
+    text-align: center;
+`;
