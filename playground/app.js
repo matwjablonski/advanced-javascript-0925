@@ -77,26 +77,40 @@
 //     text-align: center;
 // `;
 
-function OldWayDog(name) {
-    this.name = name;
-}
+// function OldWayDog(name) {
+//     this.name = name;
+// }
 
-OldWayDog.prototype.sayHello = function() {
-    return `Cześć, jestem ${this.name}`;
-}
+// OldWayDog.prototype.sayHello = function() {
+//     return `Cześć, jestem ${this.name}`;
+// }
 
-const oldWayDog = new OldWayDog('Reksio');
-oldWayDog.name; // Reksio
-oldWayDog.sayHello(); // Cześć, jestem Reksio
+// const oldWayDog = new OldWayDog('Reksio');
+// oldWayDog.name; // Reksio
+// oldWayDog.sayHello(); // Cześć, jestem Reksio
 
-class Dog {
-    constructor(name) {
-        this.name = name;
+// class Dog {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     sayHello() {
+//         return `Cześć, jestem ${this.name}`;
+//     }
+// }
+// const dog = new Dog('Azor');
+// dog.name; // Azor
+// dog.sayHello(); // Cześć, jest Azor
+
+const req = new XMLHttpRequest();
+
+req.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+
+req.onload = function() {
+    if (req.status >= 200 && req.status < 300) {
+        console.log('Sukces:', JSON.parse(req.responseText));
+    } else {
+        console.log('Błąd:', req.statusText);
     }
-    sayHello() {
-        return `Cześć, jestem ${this.name}`;
-    }
-}
-const dog = new Dog('Azor');
-dog.name; // Azor
-dog.sayHello(); // Cześć, jest Azor
+};
+
+req.send();
