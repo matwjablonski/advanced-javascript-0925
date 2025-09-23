@@ -28,32 +28,41 @@
 
 // console.log("console.log 2")
 
-function Account() {
-    this.incomes = [];
-}
+// function Account() {
+//     this.incomes = [];
+// }
 
-Account.prototype.addIncome = function (amount, description) {
-    this.incomes.push({ amount, description });
-};
+// Account.prototype.addIncome = function (amount, description) {
+//     this.incomes.push({ amount, description });
+// };
 
-function ChildAccount() {
-    Account.call(this);
-}
+// function ChildAccount() {
+//     Account.call(this);
+// }
 
-ChildAccount.prototype = Object.create(Account.prototype);
-ChildAccount.prototype.constructor = ChildAccount;
+// ChildAccount.prototype = Object.create(Account.prototype);
+// ChildAccount.prototype.constructor = ChildAccount;
 
-ChildAccount.prototype.addIncome = function (amount, description) {
-    if (amount > 1000) {
-        console.log("Child account cannot have income greater than 1000");
-        return;
-    }
-    Account.prototype.addIncome.call(this, amount, description);
-}
+// ChildAccount.prototype.addIncome = function (amount, description) {
+//     if (amount > 1000) {
+//         console.log("Child account cannot have income greater than 1000");
+//         return;
+//     }
+//     Account.prototype.addIncome.call(this, amount, description);
+// }
 
-const childAccount = new ChildAccount();
-childAccount.addIncome(100, "Birthday gift");
-childAccount.addIncome(2000, "Lottery win");
-childAccount.addIncome(500, "Part-time job");
+// const childAccount = new ChildAccount();
+// childAccount.addIncome(100, "Birthday gift");
+// childAccount.addIncome(2000, "Lottery win");
+// childAccount.addIncome(500, "Part-time job");
 
-console.log(childAccount); // [{ amount: 100, description: "Birthday gift" }]
+// console.log(childAccount); // [{ amount: 100, description: "Birthday gift" }]
+
+
+'a' + 1 // 'a1
+
+1 + 2 // 3
+
++'1' + 2 // 3
+
+'b' + 'a' + +'b' // 'baNaN'
