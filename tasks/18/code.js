@@ -5,14 +5,13 @@ const inputEl = document.getElementById('search');
 
 const input$ = fromEvent(inputEl, 'input');
 
-// debounceTime(500)
-// map()
-
-input$
+input$  
+    .debounceTime(500)
+    .map(event => event.target.value)
     .do((v) => console.log('input event'))
     .subscribe(
-        event => {
-            console.log(event.target.value);
+        v => {
+            console.log(v);
         },
         err => {}, 
         () => {}
@@ -22,3 +21,5 @@ input$
 
 const counter$ = interval(1000)
   .take(11);
+
+  counter$.subscribe(value => console.log("Licznik:", value),)
