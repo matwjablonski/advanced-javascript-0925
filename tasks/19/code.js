@@ -5,7 +5,22 @@ const users = [
   { name: "Diana", age: 35, isAdmin: true },
 ];
 
+function getAdminNames(users) {
+  return users
+    .filter(user => user.isAdmin)
+    .map(user => user.name);
+}
 
+function averageAge(users) {
+  const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+  return totalAge / users.length;
+}
+
+function promoteToAdmin(users, name) {
+  return users.map(user => 
+    user.name === name ? { ...user, isAdmin: true } : user
+  );
+}
 
 console.log(getAdminNames(users)); 
 // ["Bob", "Diana"]
